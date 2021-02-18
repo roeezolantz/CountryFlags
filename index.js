@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { monitoredPromiseAll, createReactSVGComponent } = require('./utils');
+const { monitoredPromiseAll, createReactSVGComponent, createIndexFile } = require('./utils');
 
 const countries = require('./countries.json');
 const countriesFallback = require('./external_countries.json');
@@ -11,19 +11,6 @@ const VALID_COUNTRY_CODE = /^[A-Za-z]{2,3}$/; // 2/3 characters only
 const findCountryCodeByName = (source, countryName) => Object.entries(source)
     .filter(([_, name]) => name.toLowerCase() === countryName.toLowerCase() || name.toLowerCase() === hypenToSpace(countryName).toLowerCase())
     .map(([k]) => k.toUpperCase())[0];
-
-const createIndexFile = ({ outputPath = './output/index.js', countryCodes, sourceDir = './flags' }) => {
-    let data = '';
-    countryCodes.forEach((code) => {
-        data += `export { default as ${code.toLowerCase()} } from '${sourceDir}/${code}';\n`
-    });
-    fs.writeFile(outputPath, data, (err) => {
-        if (err)
-            console.log("Failed to create index file : ", err);
-        else
-            console.log(`Created index file : ${outputPath}`);
-    });
-};
 
 const run = (directoryPath) => fs.readdir(directoryPath, async(err, files) => {
     if (err) {
@@ -82,14 +69,13 @@ const run = (directoryPath) => fs.readdir(directoryPath, async(err, files) => {
 
     await monitoredPromiseAll(allCreators, (progress) => console.log(`${progress}/${validCount}`));
     setTimeout(() => {
+            createIndexFile({ countryCodes: Object.keys(validNames) });
             console.log(`Summary of react components created (${Object.keys(validNames).length})`);
             console.log(`Summary of potentially valid codes found using external fallbacks (${Object.keys(foundByFallback).length})`);
             console.log(`Summary of suspicious codes found using fallbacks (${Object.keys(suspiciousFallbacks).length})`);
             console.log(`Summary of countries with missing codes (${missingCodes.length})`);
             console.log("Finished.")
     }, 1000);
-
-    createIndexFile({ countryCodes: Object.keys(validNames) });
 });
 
 const flagsDir = path.join(__dirname, 'flags');
