@@ -6,3 +6,6 @@ NodeJS script to convert country flags SVG files named by their country, to reac
 ```
 npm install @svgr/cli -g
 ```
+
+# How to run
+`node index.js`
