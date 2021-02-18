@@ -8,4 +8,6 @@ npm install @svgr/cli -g
 ```
 
 # How to run
-`node index.js`
+```
+node index.js
+```
