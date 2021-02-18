@@ -5,7 +5,7 @@ const { removeLastEmptyLine } = require('./removeEOFNL');
 
 const createReactSVGComponent = (code, svgFileName, {
     sourceDirPath = './flags',
-    outputDirPath = './output/components',
+    outputDirPath = './output/flags',
     templatePath = './configs/template.js',
     prettierConfigPath = './configs/config.json',
     outputFileType = 'js'
