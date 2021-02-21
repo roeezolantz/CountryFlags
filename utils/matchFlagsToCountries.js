@@ -1,7 +1,5 @@
-const fs = require('fs');
-const util = require('util');
-const readdir = util.promisify(fs.readdir);
-const { spaceToHypen } = require('./utils');
+const { promises: fs } = require('fs');
+const { spaceToHypen } = require('./textUtils');
 
 const SVG_COUNTRY_NAME_MATCHER = /flag-(.*).svg/;
 
@@ -12,7 +10,7 @@ const matchFlagsToCountries = async(flagsSource, supportedCountries) => {
     let files = [];
     
     try {
-        files = await readdir(flagsSource);
+        files = await fs.readdir(flagsSource);
     } catch(err) {
         console.log('Unable to scan directory: ' + err);
     }

@@ -1,5 +1,7 @@
 const pLimit = require('p-limit');
-const { monitoredPromiseAll, createReactSVGComponent, spaceToHypen } = require('./utils');
+const { createReactSVGComponent } = require('./createReactSVGComponent');
+const { monitoredPromiseAll } = require('./monitoredPromiseAll');
+const { spaceToHypen } = require('./textUtils');
 
 const createFlagComponents = async(codeToCountryNameMap, { asyncExecLimit = 20, ...config } = {}) => {
     console.log(`\n\n\nCreating React components... (parralel creation limit - ${asyncExecLimit})`);

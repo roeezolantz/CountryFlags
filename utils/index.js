@@ -4,7 +4,9 @@ const { withDirCreation } = require('./withDirCreation');
 const { removeLastEmptyLine } = require('./removeEOFNL');
 const { createReactSVGComponent } = require('./createReactSVGComponent');
 const { createIndexFile } = require('./createIndexFile');
-const textUtils = require('./textUtils');
+const { matchFlagsToCountries } = require('./matchFlagsToCountries');
+const { runOnTrustedFlags } = require('./runOnTrustedFlags');
+const { createFlagComponents } = require('./createFlagsComponents');
 
 module.exports = {
     monitoredPromiseAll,
@@ -13,5 +15,7 @@ module.exports = {
     removeLastEmptyLine,
     createReactSVGComponent,
     createIndexFile,
-    ...textUtils
+    matchFlagsToCountries,
+    runOnTrustedFlags,
+    createFlagComponents
 }
