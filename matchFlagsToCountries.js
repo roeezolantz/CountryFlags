@@ -5,7 +5,7 @@ const { spaceToHypen } = require('./utils');
 
 const SVG_COUNTRY_NAME_MATCHER = /flag-(.*).svg/;
 
-const runOnTrustedCountriesMapping = async(flagsSource, supportedCountries) => {
+const matchFlagsToCountries = async(flagsSource, supportedCountries) => {
     const missingFlags = {};
     const validFlags = {};
 
@@ -34,5 +34,5 @@ const runOnTrustedCountriesMapping = async(flagsSource, supportedCountries) => {
 };
 
 module.exports = {
-    runOnTrustedCountriesMapping
+    matchFlagsToCountries
 };

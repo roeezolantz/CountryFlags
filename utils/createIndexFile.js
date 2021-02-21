@@ -1,17 +1,18 @@
-const fs = require('fs');
+const { promises: fs } = require('fs');
+const chalk = require('chalk');
 
-const createIndexFile = ({ outputDirPath = './output', countryCodes, sourceDir = './flags' }) => {
+const createIndexFile = async({ outputDirPath = './output', countryCodes, sourceDir = './flags' }) => {
     let data = '';
     const filePath = `${outputDirPath}/index.js`;
     countryCodes.forEach((code) => {
         data += `export { default as ${code.toLowerCase()} } from '${sourceDir}/${code}';\n`
     });
-    fs.writeFile(filePath, data, (err) => {
-        if (err)
-            console.log("Failed to create index file : ", err);
-        else
-            console.log(`Created index file : ${filePath}`);
-    });
+    try {
+        await fs.writeFile(filePath, data);
+        console.log(chalk.green(`Created index file : ${filePath}`));
+    } catch(err) {
+            console.log(chalk.red("Failed to create index file : "), err);
+    };
 };
 
 module.exports = {
