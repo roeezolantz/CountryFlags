@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 const path = require('path');
-const countries = require('./countries.json');
+const countries = require('./countries_data/countries.json');
 const { createIndexFile, matchFlagsToCountries, createFlagComponents } = require('./utils');
 // const { runOnTrustedFlags } = require('./utils/runOnTrustedFlags');
 

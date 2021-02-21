@@ -1,6 +1,6 @@
 const fs = require('fs');
-const countries = require('../countries.json');
-const countriesFallback = require('../external_countries.json');
+const countries = require('../countries_data/countries.json');
+const countriesFallback = require('../countries_data/external_countries.json');
 const { hypenToSpace } = require('./textUtils');
 
 const VALID_COUNTRY_CODE = /^[A-Za-z]{2,3}$/; // 2/3 characters only
