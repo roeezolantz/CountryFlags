@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <svg width={44} height={44} fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="1em" height="1em" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#flag-bhutan_svg__clip0)">
       <path d="M37.556 37.556c-8.591 8.592-22.52 8.592-31.112 0-8.592-8.591-8.592-22.52 0-31.112.003 0 19.77-5.841 28.362 2.75 8.591 8.592 2.756 28.356 2.75 28.362z" fill="#FFDA44" />
       <path d="M37.557 37.556c8.591-8.591 8.591-22.52 0-31.112-8.592-8.592-22.522-8.592-31.113 0l31.113 31.112z" fill="#D80027" />

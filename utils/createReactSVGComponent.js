@@ -15,7 +15,7 @@ const createReactSVGComponent = (code, svgFileName, {
     }
 
     const outputFilePath = `${outputDirPath}/${code}.${outputFileType}`
-    const command = `svgr --prettier-config ${prettierConfigPath} --expand-props none --template ${templatePath} ${sourceDirPath}/${svgFileName} > ${outputFilePath}`
+    const command = `svgr --icon --prettier-config ${prettierConfigPath} --expand-props none --template ${templatePath} "${sourceDirPath}/${svgFileName}" > "${outputFilePath}"`
     const handleSuccess = async() => {
         console.log(`Created ${outputFilePath} successfully`);
         return await removeLastEmptyLine(outputFilePath);

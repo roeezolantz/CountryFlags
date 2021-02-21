@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <svg width={44} height={44} fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="1em" height="1em" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M22 44c12.15 0 22-9.85 22-22S34.15 0 22 0 0 9.85 0 22s9.85 22 22 22z" fill="#F0F0F0" />
     <path d="M43.87 24.39zM43.87 24.391L19.744.113a21.93 21.93 0 00-3.19.565C7.039 3.102 0 22 0 22s30.8 20.612 34.314 18.234a22.08 22.08 0 002.019-1.543l-14.3-14.299H43.87z" fill="#0052B4" />
     <path d="M38.26 22L16.866.604C7.192 2.917 0 11.618 0 22c0 12.15 9.85 22 22 22 4.609 0 8.886-1.418 12.42-3.84L16.26 22h22z" fill="#D80027" />

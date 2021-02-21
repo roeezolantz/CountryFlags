@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <svg width={44} height={44} fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="1em" height="1em" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#flag-christmas-island_svg__clip0)">
       <path d="M37.556 37.556c-8.591 8.591-22.52 8.591-31.112 0-8.592-8.592-8.592-22.521 0-31.113.676.676 17.585 13.527 17.585 13.527l13.527 17.586z" fill="#0052B4" />
       <path d="M6.443 6.443c8.592-8.591 22.522-8.591 31.113 0 8.592 8.592 8.592 22.521 0 31.113" fill="#6DA544" />

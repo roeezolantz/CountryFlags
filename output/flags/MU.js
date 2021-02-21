@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <svg width={44} height={44} fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="1em" height="1em" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clipPath="url(#flag-mauritius_svg__clip0)">
       <path d="M2.675 11.478L22 13.391l19.325-1.913C37.593 4.64 30.339 0 22 0 13.66 0 6.406 4.64 2.675 11.478z" fill="#D80027" />
       <path d="M2.675 32.522L22 34.434l19.325-1.913A21.902 21.902 0 0044 22l-22-1.913L0 22c0 3.811.97 7.396 2.675 10.522z" fill="#FFDA44" />
